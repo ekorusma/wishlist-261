@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+
+<html>
+<body>
+
+  <form action="{{ url_for('savecar')}}" method = "POST">
+    Insert Car<br><br>
+    Id:<br>
+    <input type="text" name="txt_idcar"><br>
+    Name:<br>
+    <input type="text" name="txt_namecar"><br>
+    Price:<br>
+    <input type="text" name="txt_pricecar">
+    <br>
+    <input type="submit" value="Submit">
+  </form>
+
+</body>
+</html>

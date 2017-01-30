@@ -1,0 +1,66 @@
+<!-- <!DOCTYPE html>
+
+<html>
+<body>
+  <form action="{{ url_for ('updatecar')}}" method = "POST">
+    Update Car<br><br>
+    <table>
+      <tr>
+        <td>Id:</td>
+        <td><select name="id">
+            {% for row in rows %}
+            <option value="{{row["id"]}}">{{row["id"]}}</option>
+            {% endfor %}
+            </select></td>
+        </tr>
+        <tr>
+          <td>Name:</td>
+          <td><input type="text" name="namecar"></td>
+        </tr>
+        <tr>
+          <td>Price:</td>
+          <td><input type="text" name="price"></td>
+        </tr>
+    </table>
+    <input type="submit" value="Update">
+  </form>
+</body>
+</html> -->
+
+{% include 'header.html' %}
+
+<body>
+  <div class="container">
+  <form class="form-horizontal" action="{{ url_for('save_user')}}" method = "POST">
+    <h3>Update Car :</h3>
+        <div class="form-group">
+          <label class="col-sm-2 control-label">Id Car :</label>
+            <div class="col-sm-10">
+              <select class="form-control" name="id">
+                  {% for row in rows %}
+                  <option value="{{row["id"]}}">{{row["id"]}}</option>
+                  {% endfor %}
+                  </select>
+              <!-- <input type="text" class="form-control" name="firstname" placeholder="First Name"> -->
+            </div>
+        </div>
+
+        <div class="form-group">
+          <label class="col-sm-2 control-label">Name Car :</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" name="namecar" placeholder="Name Car">
+            </div>
+        </div>
+
+        <div class="form-group">
+          <label class="col-sm-2 control-label">Price :</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" name="price" placeholder="Price">
+            </div>
+        </div>
+        <button type="submit" class="btn btn-primary btn-block">SignUp</button>
+  </form>
+</div>
+</body>
+
+{% include 'footer.html' %}

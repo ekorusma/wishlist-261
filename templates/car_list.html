@@ -1,0 +1,29 @@
+{% include 'header.html' %}
+
+<body>
+  <div class="container">
+  <p>Daftar Mobil</p>
+  <table class="table table-hover">
+    <thead>
+      <th>Id</th>
+      <th>Nama</th>
+      <th>Price</th>
+      <th>Action</th>
+    </thead>
+
+    <tbody>
+      {% for row in rows %}
+      <tr>
+        <td>{{row["id"]}}</td>
+        <td>{{row["name"]}}</td>
+        <td>{{row["price"]}}</td>
+        <td>
+          <a href=""><button type="button" class="btn btn-primary">Edit</button></a>
+          <a href="{{url_for('carlist_delete', idcar = row["id"])}}"><button type="button" class="btn btn-primary">Delete</button></a>
+        </td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+
+{% include 'footer.html' %}
